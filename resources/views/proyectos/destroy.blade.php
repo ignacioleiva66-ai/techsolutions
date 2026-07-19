@@ -14,7 +14,10 @@
     <div class="alert">
         <p>¿Estás seguro de que deseas eliminar permanentemente el proyecto con ID: <strong>{{ $id }}</strong>?</p>
     </div>
-    <form action="#" method="POST">
+    <form action="{{ route('proyectos.delete', $id) }}" method="POST">
+        @csrf
+        @method('DELETE')
+
         <button type="submit">Sí, eliminar proyecto</button>
     </form>
     <br>

@@ -13,7 +13,12 @@
 </head>
 <body>
     <h1>Agregar Nuevo Proyecto</h1>
-    <form action="#" method="POST">
+    {{-- Envía el formulario a la ruta que ejecuta el método store() --}}
+    <form action="{{ route('proyectos.store') }}" method="POST">
+
+        {{-- Token de seguridad requerido por Laravel para formularios POST --}}
+        @csrf
+
         <div class="form-group">
             <label>Nombre del Proyecto:</label>
             <input type="text" name="nombre" required>
