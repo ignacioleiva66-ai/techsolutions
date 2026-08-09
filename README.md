@@ -1,7 +1,5 @@
 
-🚀 Tech Solutions - Sistema de Gestión de Proyectos
-
-Mostrar imagen Mostrar imagen
+🚀 Tech Solutions - Sistema de Gestión de Proyecto
 
 📖 Descripción del Proyecto
 
