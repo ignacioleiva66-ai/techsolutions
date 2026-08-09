@@ -1,39 +1,48 @@
+[Uploading README.md…]()
+# 🚀 Tech Solutions - Sistema de Gestión de Proyectos
 
-🚀 Tech Solutions - Sistema de Gestión de Proyecto
+**PHP 8.2+** · **Laravel 10**
 
-📖 Descripción del Proyecto
+## 📖 Descripción del Proyecto
 
-Este proyecto es una aplicación web desarrollada para modernizar el sistema de gestión de proyectos de la empresa Tech Solutions. Fue construido como parte de las Evaluaciones Sumativas de las Unidades 1 y 2 de la asignatura Desarrollo Software Web I en el Instituto Profesional San Sebastián.
+Este proyecto es una aplicación web desarrollada para modernizar el sistema de gestión de proyectos de la empresa **Tech Solutions**. Fue construido como parte de las Evaluaciones Sumativas de las Unidades 1 y 2 de la asignatura **Desarrollo Software Web I** en el Instituto Profesional San Sebastián.
 
-La aplicación permite gestionar proyectos de manera eficiente mediante un CRUD (Crear, Leer, Actualizar, Eliminar), un sistema de autenticación de usuarios con contraseñas cifradas, siguiendo la arquitectura Modelo-Vista-Controlador (MVC) y aplicando los principios de diseño del framework Laravel.
+La aplicación permite gestionar proyectos de manera eficiente mediante un CRUD (Crear, Leer, Actualizar, Eliminar), un sistema de **autenticación de usuarios** con contraseñas cifradas, siguiendo la arquitectura Modelo-Vista-Controlador (MVC) y aplicando los principios de diseño del framework Laravel.
 
-🎯 Funcionalidades Implementadas
-Unidad 1 — Gestión de Proyectos
-Módulo	Descripción
-📋 Listar Proyectos	Visualización de todos los proyectos registrados en el sistema.
-➕ Agregar Proyecto	Formulario HTML para registrar y procesar un nuevo proyecto con sus respectivos datos.
-🔍 Ver Proyecto	Visualización del detalle de un proyecto específico, consultado por su parámetro ID.
-✏️ Actualizar Proyecto	Interfaz para la edición y actualización de los datos de un proyecto existente.
-🗑️ Eliminar Proyecto	Pantalla de confirmación para la eliminación segura de un proyecto del sistema.
-📊 Componente UF	Componente reutilizable (Blade Component) que simula el consumo de una API externa para mostrar el valor de la Unidad de Fomento (UF) del día.
-Unidad 2 — Autenticación y Base de Datos
-Módulo	Descripción
-🗄️ Conexión a Base de Datos	Configuración de la aplicación mediante variables de entorno (.env) usando MySQL como motor de base de datos.
-🧩 Modelos con ORM (Eloquent)	Modelos User y Proyecto mapeados a tablas reales de la base de datos mediante migraciones.
-📝 Registro de Usuario	Formulario y controlador que crean un nuevo usuario, validando los datos ingresados.
-🔑 Inicio de Sesión	Formulario y controlador que validan las credenciales del usuario contra la base de datos.
-🔒 Cifrado de Contraseña	Las contraseñas se almacenan cifradas mediante Hash::make() (bcrypt), nunca en texto plano.
-🚪 Cierre de Sesión	Ruta y método para finalizar la sesión activa del usuario.
-🛠️ Tecnologías Utilizadas
-Backend: PHP 8.2+, Laravel 10
-Frontend: Blade Templating Engine, HTML5, CSS3, Bootstrap 5
-Base de Datos: MySQL
-Autenticación: Laravel Auth (Hash + Auth facade)
-Arquitectura: Modelo-Vista-Controlador (MVC)
-Control de Versiones: Git & GitHub
-Gestión de Dependencias: Composer
-Entorno Local: Laragon
-📁 Estructura del Proyecto (Principales directorios)
+## 🎯 Funcionalidades Implementadas
+
+### Unidad 1 — Gestión de Proyectos
+
+* 📋 **Listar Proyectos** — Visualización de todos los proyectos registrados en el sistema.
+* ➕ **Agregar Proyecto** — Formulario HTML para registrar y procesar un nuevo proyecto con sus respectivos datos.
+* 🔍 **Ver Proyecto** — Visualización del detalle de un proyecto específico, consultado por su parámetro ID.
+* ✏️ **Actualizar Proyecto** — Interfaz para la edición y actualización de los datos de un proyecto existente.
+* 🗑️ **Eliminar Proyecto** — Pantalla de confirmación para la eliminación segura de un proyecto del sistema.
+* 📊 **Componente UF** — Componente reutilizable (Blade Component) que simula el consumo de una API externa para mostrar el valor de la Unidad de Fomento (UF) del día.
+
+### Unidad 2 — Autenticación y Base de Datos
+
+* 🗄️ **Conexión a Base de Datos** — Configuración de la aplicación mediante variables de entorno (`.env`) usando MySQL como motor de base de datos.
+* 🧩 **Modelos con ORM (Eloquent)** — Modelos `User` y `Proyecto` mapeados a tablas reales de la base de datos mediante migraciones.
+* 📝 **Registro de Usuario** — Formulario y controlador que crean un nuevo usuario, validando los datos ingresados.
+* 🔑 **Inicio de Sesión** — Formulario y controlador que validan las credenciales del usuario contra la base de datos.
+* 🔒 **Cifrado de Contraseña** — Las contraseñas se almacenan cifradas mediante `Hash::make()` (bcrypt), nunca en texto plano.
+* 🚪 **Cierre de Sesión** — Ruta y método para finalizar la sesión activa del usuario.
+
+## 🛠️ Tecnologías Utilizadas
+
+* **Backend:** PHP 8.2+, Laravel 10
+* **Frontend:** Blade Templating Engine, HTML5, CSS3, Bootstrap 5
+* **Base de Datos:** MySQL
+* **Autenticación:** Laravel Auth (Hash + Auth facade)
+* **Arquitectura:** Modelo-Vista-Controlador (MVC)
+* **Control de Versiones:** Git \& GitHub
+* **Gestión de Dependencias:** Composer
+* **Entorno Local:** Laragon
+
+## 📁 Estructura del Proyecto (Principales directorios)
+
+```
 techsolutions/
 ├── app/
 │   ├── Http/
@@ -48,8 +57,8 @@ techsolutions/
 │           └── ValorUf.php              # Lógica PHP del componente (UF)
 ├── database/
 │   └── migrations/
-│       ├── 2014_10_12_000000_create_users_table.php
-│       └── 2026_08_09_..._create_proyectos_table.php
+│       ├── 2014\_10\_12\_000000\_create\_users\_table.php
+│       └── 2026\_08\_09\_...\_create\_proyectos\_table.php
 ├── resources/
 │   └── views/
 │       ├── proyectos/
@@ -65,34 +74,64 @@ techsolutions/
 │           └── valor-uf.blade.php       # Diseño visual del componente UF
 └── routes/
     └── web.php                          # Definición de las rutas de proyectos y autenticación
-⚙️ Instalación y Ejecución Local
+```
+
+## ⚙️ Instalación y Ejecución Local
 
 Sigue estos pasos para levantar el entorno de desarrollo en tu máquina local:
 
-Clonar el repositorio
-   git clone https://github.com/ignacioleiva66-ai/techsolutions.git
-Acceder al directorio del proyecto
-   cd techsolutions
-Instalar las dependencias de PHP
-   composer install
-Configurar el archivo de entorno
-   cp .env.example .env
-   php artisan key:generate
+**1. Clonar el repositorio**
 
-Edita .env y ajusta las credenciales de tu base de datos local si es necesario (DB_DATABASE, DB_USERNAME, DB_PASSWORD).
+```
+git clone https://github.com/ignacioleiva66-ai/techsolutions.git
+```
 
-Crear la base de datos y ejecutar las migraciones
-   php artisan migrate
-Iniciar el servidor de desarrollo
-   php artisan serve
-Acceder a la aplicación Abre tu navegador y dirígete a:
-Proyectos: http://localhost:8000/proyectos
-Registro: http://localhost:8000/register
-Inicio de sesión: http://localhost:8000/login
-👥 Equipo de Desarrollo
+**2. Acceder al directorio del proyecto**
 
-IP San Sebastián — Desarrollo Software Web I
+```
+cd techsolutions
+```
 
-Susan Fernanda Arteaga Marín
-Mayco Michel Guzmán Velasquez
-Ignacio Nicolás Leiva Cordero
+**3. Instalar las dependencias de PHP**
+
+```
+composer install
+```
+
+**4. Configurar el archivo de entorno**
+
+```
+cp .env.example .env
+php artisan key:generate
+```
+
+Edita `.env` y ajusta las credenciales de tu base de datos local si es necesario (`DB\_DATABASE`, `DB\_USERNAME`, `DB\_PASSWORD`).
+
+**5. Crear la base de datos y ejecutar las migraciones**
+
+```
+php artisan migrate
+```
+
+**6. Iniciar el servidor de desarrollo**
+
+```
+php artisan serve
+```
+
+**7. Acceder a la aplicación**
+
+Abre tu navegador y dirígete a:
+
+* Proyectos: `http://localhost:8000/proyectos`
+* Registro: `http://localhost:8000/register`
+* Inicio de sesión: `http://localhost:8000/login`
+
+## 👥 Equipo de Desarrollo
+
+**IP San Sebastián — Desarrollo Software Web I**
+
+* Susan Fernanda Arteaga Marín
+* Mayco Michel Guzmán Velasquez
+* Ignacio Nicolás Leiva Cordero
+
