@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProyectoController;
+use App\Http\Controllers\AuthController;
 
 // 1. Listar todos los proyectos
 Route::get('/proyectos', [ProyectoController::class, 'index'])->name('proyectos.index');
@@ -26,3 +27,12 @@ Route::get('/proyectos/{id}/eliminar', [ProyectoController::class, 'delete'])->n
 
 // 8. Eliminar un proyecto por su ID
 Route::delete('/proyectos/{id}', [ProyectoController::class, 'destroy'])->name('proyectos.delete');
+
+// Rutas de autenticación
+Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
+Route::post('/register', [AuthController::class, 'register'])->name('register.submit');
+
+Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
+
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
