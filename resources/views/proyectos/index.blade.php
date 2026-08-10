@@ -22,6 +22,7 @@
             <th>Estado</th>
             <th>Responsable</th>
             <th>Monto</th>
+            <th>Creado por</th>
             <th>Acciones</th>
         </tr>
         @foreach($proyectos as $proyecto)
@@ -32,6 +33,7 @@
             <td>{{ $proyecto['Estado'] }}</td>
             <td>{{ $proyecto['Responsable'] }}</td>
             <td>${{ number_format($proyecto['Monto'], 0, ',', '.') }}</td>
+            <td>{{ $proyecto['created_by'] }}</td>
             <td>
                 <a href="{{ route('proyectos.show', $proyecto['Id']) }}">Ver</a> |
                 <a href="{{ route('proyectos.edit', $proyecto['Id']) }}">Editar</a> |

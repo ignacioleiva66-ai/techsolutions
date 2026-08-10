@@ -18,6 +18,7 @@
             <p><strong>Estado:</strong> {{ $proyecto['Estado'] }}</p>
             <p><strong>Responsable:</strong> {{ $proyecto['Responsable'] }}</p>
             <p><strong>Monto:</strong> ${{ number_format($proyecto['Monto'], 0, ',', '.') }}</p>
+            <p><strong>Creado por (usuario id):</strong> {{ $proyecto['created_by'] }}</p>
         </div>
     @else
         <p>Proyecto no encontrado.</p>
