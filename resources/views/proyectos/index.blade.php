@@ -11,6 +11,7 @@
     </style>
 </head>
 <body>
+    @include('components.navbar')
     <x-valor-u-f />
 
     <h1>Listado de Proyectos Tech Solutions</h1>

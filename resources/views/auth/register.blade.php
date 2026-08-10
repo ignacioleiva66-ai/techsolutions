@@ -6,6 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
+    @include('components.navbar')
     <div class="container mt-5" style="max-width: 450px;">
         <h2 class="mb-4">Crear cuenta</h2>
         @if ($errors->any())
