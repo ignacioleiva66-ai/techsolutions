@@ -1,5 +1,8 @@
 <nav style="padding: 15px; background-color: #f8f9fa; display: flex; justify-content: space-between; align-items: center;">
     <div>
+        <a href="{{ route('home') }}" style="font-weight: bold; text-decoration: none; color: #333; margin-right: 15px;">
+            Inicio
+        </a>
         <a href="{{ url('/proyectos') }}" style="font-weight: bold; text-decoration: none; color: #333;">
             Proyectos
         </a>

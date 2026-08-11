@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProyectoController;
 use App\Http\Controllers\AuthController;
 
+Route::view('/', 'welcome')->name('home');
+
 // 1. Listar todos los proyectos
 Route::get('/proyectos', [ProyectoController::class, 'index'])->name('proyectos.index');
 
