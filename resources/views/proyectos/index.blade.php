@@ -28,17 +28,17 @@
         </tr>
         @foreach($proyectos as $proyecto)
         <tr>
-            <td>{{ $proyecto['Id'] }}</td>
-            <td>{{ $proyecto['Nombre'] }}</td>
-            <td>{{ $proyecto['Fecha de Inicio'] }}</td>
-            <td>{{ $proyecto['Estado'] }}</td>
-            <td>{{ $proyecto['Responsable'] }}</td>
-            <td>${{ number_format($proyecto['Monto'], 0, ',', '.') }}</td>
-            <td>{{ $proyecto['created_by'] }}</td>
+            <td>{{ $proyecto->id }}</td>
+            <td>{{ $proyecto->nombre }}</td>
+            <td>{{ $proyecto->fecha_inicio }}</td>
+            <td>{{ $proyecto->estado }}</td>
+            <td>{{ $proyecto->responsable }}</td>
+            <td>${{ number_format($proyecto->monto, 0, ',', '.') }}</td>
+            <td>{{ $proyecto->created_by }}</td>
             <td>
-                <a href="{{ route('proyectos.show', $proyecto['Id']) }}">Ver</a> |
-                <a href="{{ route('proyectos.edit', $proyecto['Id']) }}">Editar</a> |
-                <a href="{{ route('proyectos.destroy', $proyecto['Id']) }}">Eliminar</a>
+                <a href="{{ route('proyectos.show', $proyecto->id) }}">Ver</a> |
+                <a href="{{ route('proyectos.edit', $proyecto->id) }}">Editar</a> |
+                <a href="{{ route('proyectos.destroy', $proyecto->id) }}">Eliminar</a>
             </td>
         </tr>
         @endforeach
