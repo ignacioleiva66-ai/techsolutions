@@ -1,14 +1,13 @@
-[Uploading README (2).md…]()
-
+[README.md](https://github.com/user-attachments/files/31865356/README.md)
 # 🚀 Tech Solutions - Sistema de Gestión de Proyectos
 
 **PHP 8.2+** · **Laravel 10**
 
 ## 📖 Descripción del Proyecto
 
-Este proyecto es una aplicación web desarrollada para modernizar el sistema de gestión de proyectos de la empresa **Tech Solutions**. Fue construido como parte de las Evaluaciones Sumativas de las Unidades 1 y 2 de la asignatura **Desarrollo Software Web I** en el Instituto Profesional San Sebastián.
+Este proyecto es una aplicación web desarrollada para modernizar el sistema de gestión de proyectos de la empresa **Tech Solutions**. Fue construido como parte de las Evaluaciones Sumativas de las Unidades 1, 2 y 3 de la asignatura **Desarrollo Software Web I** en el Instituto Profesional San Sebastián.
 
-La aplicación permite gestionar proyectos de manera eficiente mediante un CRUD (Crear, Leer, Actualizar, Eliminar), un sistema de **autenticación de usuarios** con contraseñas cifradas, y una interfaz de navegación unificada tipo sitio corporativo, siguiendo la arquitectura Modelo-Vista-Controlador (MVC) y aplicando los principios de diseño del framework Laravel.
+La aplicación permite gestionar proyectos de manera eficiente mediante un CRUD web (Crear, Leer, Actualizar, Eliminar), un sistema de **autenticación de usuarios** con contraseñas cifradas, una interfaz de navegación unificada tipo sitio corporativo, y una **API REST** para interactuar con los proyectos de forma programática, siguiendo la arquitectura Modelo-Vista-Controlador (MVC) y aplicando los principios de diseño del framework Laravel.
 
 ## 🎯 Funcionalidades Implementadas
 
@@ -32,13 +31,29 @@ La aplicación permite gestionar proyectos de manera eficiente mediante un CRUD 
 - 🏠 **Página de Inicio** — Portada corporativa con información sobre Tech Solutions (quiénes somos, qué ofrecemos, misión).
 - 🧭 **Navegación Unificada** — Layout compartido (`layouts/app.blade.php`) con barra de navegación que se adapta según el estado de sesión del usuario (Inicio, Proyectos, Iniciar sesión/Registrarse, o nombre de usuario y Cerrar sesión).
 
+### Unidad 3 — API REST de Proyectos
+
+- 🔌 **CRUD vía API** — Endpoints REST bajo `/api/proyectos` para crear, listar, consultar, actualizar y eliminar proyectos directamente sobre la base de datos, usando `Route::apiResource`.
+- 📦 **Respuesta estandarizada (DTO)** — Todas las respuestas (excepto la eliminación) se devuelven mediante `ApiResponseDTO`, con la forma `{ code, message, data }`.
+- ✅ **Validación de datos** — Todos los campos son requeridos y se validan con las reglas nativas de Laravel antes de insertar o actualizar un proyecto.
+- 🔢 **Códigos de respuesta HTTP correctos** — `201` al crear, `200` al listar/consultar/actualizar, `404` si el proyecto no existe, y `204` sin cuerpo al eliminar.
+
+**Endpoints disponibles:**
+
+- `GET /api/proyectos` — Lista todos los proyectos (200).
+- `POST /api/proyectos` — Crea un nuevo proyecto (201).
+- `GET /api/proyectos/{id}` — Consulta un proyecto por su ID (200, o 404 si no existe).
+- `PUT /api/proyectos/{id}` — Actualiza un proyecto por su ID (200, o 404 si no existe).
+- `DELETE /api/proyectos/{id}` — Elimina un proyecto por su ID (204, o 404 si no existe).
+
 ## 🛠️ Tecnologías Utilizadas
 
 - **Backend:** PHP 8.2+, Laravel 10
 - **Frontend:** Blade Templating Engine, HTML5, CSS3, Bootstrap 5, Bootstrap Icons
 - **Base de Datos:** MySQL
-- **Autenticación:** Laravel Auth (Hash + Auth facade)
-- **Arquitectura:** Modelo-Vista-Controlador (MVC)
+- **Autenticación:** Laravel Auth (Hash + Auth facade), Laravel Sanctum
+- **API:** Rutas RESTful (`Route::apiResource`) con respuestas JSON estandarizadas
+- **Arquitectura:** Modelo-Vista-Controlador (MVC) + DTO para respuestas de API
 - **Control de Versiones:** Git & GitHub
 - **Gestión de Dependencias:** Composer
 - **Entorno Local:** Laragon
@@ -48,10 +63,14 @@ La aplicación permite gestionar proyectos de manera eficiente mediante un CRUD 
 ```
 techsolutions/
 ├── app/
+│   ├── DTOs/
+│   │   └── ApiResponseDTO.php           # Estructura estándar de respuesta de la API
 │   ├── Http/
 │   │   └── Controllers/
-│   │       ├── ProyectoController.php   # Controlador de proyectos (CRUD)
-│   │       └── AuthController.php       # Controlador de autenticación (login/registro)
+│   │       ├── ProyectoController.php   # Controlador web de proyectos (CRUD con vistas)
+│   │       ├── AuthController.php       # Controlador de autenticación (login/registro)
+│   │       └── Api/
+│   │           └── ProyectoController.php  # Controlador API de proyectos (CRUD REST)
 │   ├── Models/
 │   │   ├── Proyecto.php                 # Modelo Eloquent de proyectos
 │   │   └── User.php                     # Modelo Eloquent de usuarios
@@ -80,7 +99,8 @@ techsolutions/
 │           ├── navbar.blade.php         # Barra de navegación
 │           └── valor-uf.blade.php       # Diseño visual del componente UF
 └── routes/
-    └── web.php                          # Rutas de inicio, proyectos y autenticación
+    ├── web.php                          # Rutas de inicio, proyectos y autenticación
+    └── api.php                          # Rutas REST de proyectos (/api/proyectos)
 ```
 
 ## ⚙️ Instalación y Ejecución Local
@@ -126,6 +146,13 @@ Abre tu navegador y dirígete a:
 - Proyectos: `http://localhost:8000/proyectos`
 - Registro: `http://localhost:8000/register`
 - Inicio de sesión: `http://localhost:8000/login`
+
+**8. Probar la API**
+
+Con el servidor corriendo, puedes probar los endpoints con `curl` o Postman, por ejemplo:
+```
+curl http://localhost:8000/api/proyectos
+```
 
 ## 👥 Equipo de Desarrollo
 
