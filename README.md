@@ -137,8 +137,6 @@ Antes de ejecutar las migraciones, crea una base de datos MySQL vacía, por ejem
 desarrollo_software_1
 ~~~
 
-Luego configura las credenciales de la base de datos en el archivo `.env`.
-
 Una vez creada la base de datos, ejecuta:
 
 ~~~bash
