@@ -131,8 +131,21 @@ Edita `.env` y ajusta las credenciales de tu base de datos local si es necesario
 
 **5. Crear la base de datos y ejecutar las migraciones**
 ```
-php artisan migrate
-```
+Antes de ejecutar las migraciones, crea una base de datos MySQL vacía, por ejemplo:
+
+~~~text
+desarrollo_software_1
+~~~
+
+Luego configura las credenciales de la base de datos en el archivo `.env`.
+
+Una vez creada la base de datos, ejecuta:
+
+~~~bash
+php artisan migrate --seed
+~~~
+
+Este comando crea las tablas necesarias mediante las migraciones y ejecuta el `DatabaseSeeder`, que crea el usuario de prueba requerido por la API.
 
 **6. Iniciar el servidor de desarrollo**
 ```
